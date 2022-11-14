@@ -1,0 +1,31 @@
+/* title */
+
+.title {
+    font-family: 'Milky', sans-serif;
+}
+
+/* main */
+
+article > h2 {
+    font-size: var(--fs-mega-big);
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-medium);
+}
+
+article > p {
+    font-size: var(--fs-medium);
+    line-height: 1.4em;
+}
+
+article > ul {
+    list-style: circle;
+    font-size: var(--fs-medium);
+    line-height: 1.4em;
+    padding-left: 1em;
+}
+
+@media (max-width: 750px) {
+    p {
+        font-size: var(--fs-small) !important;
+    }
+}

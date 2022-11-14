@@ -1,148 +1,82 @@
-@import url(reset.css);
-@import url(fonts.css);
+/* title */
 
-:root {
-    --clr-primary: rgb(0, 0, 0); /* text color */
-    --clr-accent: rgb(130, 130, 130); /* mid color */
-    --clr-neutral: rgb(255, 255, 255); /* back color */
-
-    --ff-primary: 'Mochiy Pop One', sans-serif;
-    --ff-secondary: 'Open Sanscv', sans-serif; /* usata nella nav */
-
-    --fw-light: 200;
-    --fw-normal: 400;
-    --fw-medium: 600;
-    --fw-hard: 800;
-
-    --fs-small: 1em;
-    --fs-medium: 1.5em;
-    --fs-big: 2em;
-    
-    --fs-title: 3.3em;
+.title {
+    font-family: 'SpaceX', sans-serif;
 }
 
-h1 {
-    font-size: var(--fs-title);
-}
-
-h2 {
-    font-size: var(--fs-big);
-}
-
-h3 {
-    font-size: var(--fs-medium);
-}
-
-h4 {
-    font-size: var(--fs-small);
-}
-
-p {
-    font-size: var(--fs-small);
-}
-
-body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--clr-neutral);
-    color: var(--clr-primary);
-}
-
-a {
-    text-decoration: none;
-    font-family: var(--ff-secondary);
-    font-weight: var(--fw-normal);
-    font-size: var(--fs-small);
-    color: var(--ff-primary);
-}
-
-a:hover {
-    color: var(--clr-accent);
-}
-
-/* NAV BAR */
-
-nav {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-nav > ul > li {
-    padding: 10px;
-}
-
-nav > ul {
-    display: flex;
-    align-items: center;
-    list-style: none;
-}
-
-/* FOOTER */
-
-footer {
-    display: flex;
-    text-align: center;
-    padding: 8px;
-    flex-direction: column;
-    line-height: 1.5em;
-}
-
-/* MAIN */
+/* main */
 
 main {
-    flex: 1;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 3em;
 }
 
-main > .title {
+/* article */
+
+article {
     display: flex;
     justify-content: center;
-    position: relative;
-    width: 100%;
-    font-family: 'SpaceX', sans-serif;
-    line-height: 2em;
-    line-height: 5rem;
 }
 
-/* THEME */
-
-.theme-picker {
-    position: relative;
-    width: 100%;
+article > a {
     display: flex;
-    justify-content: right;
-    margin-right: 30px;
+    align-items: center;
+    justify-content: center;
+
+    transition: 200ms;
 }
 
-.theme {
-    appearance: none;
-    width: 1rem;
-    height: 1rem;
-    outline: 2px solid var(--clr-primary);
-    outline-offset: 3px;
-    border-radius: 50%;
-    background-color: var(--ff-primary);
-    cursor: pointer;
+article > a > h2 {
+    position: absolute;
+    color: var(--clr-neutral);
+    background-color: var(--clr-primary);
+    padding-left: 5px;
+    padding-top: 6px;
+    padding-right: 4px;
+    border: solid var(--clr-neutral) 2px;
+    z-index: 1;
 }
 
-.theme#t-white {
-    margin-right: 6px;
+article > a > img {
+    height: 25rem;
 }
 
-.theme:checked {
-    background-color: var(--clr-accent);
-    outline-color: var(--clr-accent);
+article > a:hover {
+    transition-duration: 200ms;
+    filter: brightness(70%);
 }
 
-:root:has(#t-white:checked) {
-    --clr-neutral: rgb(255, 255, 255);
-    --clr-primary: rgb(0, 0, 0);
+/* different text style */
+
+.art1 > a > h2 {
+    font-family: 'tesla';
 }
 
-:root:has(#t-black:checked) {
-    --clr-primary: rgb(255, 255, 255);
-    --clr-neutral: rgb(0, 0, 0);
+.art2 > a > h2 {
+    font-family: var(--ff-terz);
+}
+
+.art3 > a > h2 {
+    font-family: 'spacex';
+}
+
+@media (max-width: 1770px) {
+    main {
+        display: block;
+    }
+
+    .art2 {
+        padding: 3em 0 3em 0;
+    }
+
+    article > a > img {
+        height: 23vh;
+        min-height: 258px;
+    }
+
+    article {
+        font-size: .5em;
+    }
 }
